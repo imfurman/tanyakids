@@ -13,6 +13,44 @@ hugo server -D
 
 Сайт будет доступен по адресу `http://localhost:1313/`.
 
+## Tailwind CSS
+
+Стили собираются в `static/assets/app.css` через Tailwind CLI.
+
+1) Установите зависимости:
+
+```bash
+npm install
+```
+
+2) Одноразовая сборка:
+
+```bash
+npm run build:css
+```
+
+3) Режим наблюдения:
+
+```bash
+npm run watch:css
+```
+
+Входной файл: `assets/tailwind.css`. Пути для purge указаны в `tailwind.config.js` (layouts и content).
+
+## Как заменить фото в hero
+
+1) Замените исходник:
+
+- `static/images/tanya-with-child-animated.png`
+
+2) Сгенерируйте WebP (рекомендованная ширина ~1200px):
+
+```bash
+cwebp -q 82 static/images/tanya-with-child-animated.png -o static/images/tanya-with-child-animated.webp
+```
+
+В шаблоне используется `<picture>` с WebP и fallback PNG.
+
 ## Деплой на GitHub Pages
 
 Деплой выполняется GitHub Actions workflow: `.github/workflows/hugo.yml`.
@@ -65,12 +103,14 @@ content/varna/noch.md
 
 3) Добавьте ссылку на услугу в `content/services.md` и в локальной странице города.
 
+4) Если нужно вывести карточку услуги на главной, добавьте её в `layouts/index.html` (секция «Услуги»).
+
 ## Где менять контакты
 
 Контакты находятся в `hugo.toml`:
 
-- `params.phone`
-- `params.email`
+- `params.telegram`
+- `params.instagram`
 - `params.address`
 
 ## Файлы и папки

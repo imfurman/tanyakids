@@ -24,6 +24,11 @@ disableKinds = ["taxonomy", "term"]
   address = "Варна, Болгария"
   socialImage = "/images/og-cover.svg"
   twitterSite = "@"
+  whatsapp = "https://wa.me/359000000000"
+  telegram = "https://t.me/shchurtatiana"
+  instagram = "https://www.instagram.com/shchurtatiana"
+  viber = "viber://chat?number=+359000000000"
+  schedule = "Пн–Сб, 9:00–20:00"
 
 [markup]
   [markup.goldmark]

@@ -1,13 +1,26 @@
 {{ with .Params.faq }}
-<section class="faq" id="faq">
-  <h2>Частые вопросы</h2>
-  <div class="faq-list">
-    {{ range . }}
-      <details>
-        <summary>{{ .question }}</summary>
-        <p>{{ .answer }}</p>
-      </details>
-    {{ end }}
+<section class="relative py-12 sm:py-16 lg:py-20" id="faq">
+  <div class="pointer-events-none absolute left-6 top-10 hidden h-10 w-10 rounded-full bg-berry-200 sm:block"></div>
+  <div class="pointer-events-none absolute left-16 top-16 hidden h-3 w-3 rounded-full bg-berry-400 sm:block"></div>
+  <div class="pointer-events-none absolute right-10 top-12 hidden h-12 w-20 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+  <div class="pointer-events-none absolute right-24 top-18 hidden h-8 w-16 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+  <div class="container-primary relative z-10">
+    <div class="flex flex-col gap-3">
+      <span class="section-kicker">FAQ</span>
+      <h2 class="section-title">Частые вопросы</h2>
+      <p class="section-subtitle max-w-2xl">Собрала ответы на то, что чаще всего волнует родителей. Если останутся вопросы — напишите.</p>
+    </div>
+    <div class="mt-10 grid items-start gap-4 lg:grid-cols-2">
+      {{ range . }}
+        <details class="faq-item group rounded-[2rem] border-2 border-ink-100 bg-white/95 p-5 shadow-[0_10px_0_0_rgba(37,39,55,0.06)] transition hover:-translate-y-0.5">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 text-left">
+            <span class="text-base font-semibold text-ink-900">{{ .question }}</span>
+            <span class="faq-icon text-2xl text-berry-400 transition">+</span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-ink-700">{{ .answer }}</p>
+        </details>
+      {{ end }}
+    </div>
   </div>
 </section>
 {{ end }}

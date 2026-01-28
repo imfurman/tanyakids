@@ -1,16 +1,524 @@
 {{ define "main" }}
-  <article class="page home">
-    <header class="page-header">
-      <h1>{{ with .Params.h1 }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
-      {{ with .Params.lead }}<p class="lead">{{ . }}</p>{{ end }}
-      <div class="cta-row">
-        <a class="btn" href="{{ relref . "contact" }}">Связаться</a>
-        <a class="btn ghost" href="{{ relref . "varna" }}">Няня в Варне</a>
+  <article class="bg-sand-50">
+    <section class="relative overflow-hidden bg-sea-50/70">
+      <div class="pointer-events-none absolute -left-24 top-16 h-72 w-72 rounded-full bg-gradient-to-br from-sun-200/80 via-sand-50 to-sea-200/70 blur-3xl opacity-40 sm:opacity-100"></div>
+      <div class="pointer-events-none absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-gradient-to-br from-leaf-200/80 via-sand-50 to-sea-200/70 blur-3xl opacity-40 sm:opacity-100"></div>
+      <div class="pointer-events-none absolute left-10 top-10 h-14 w-32 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] hidden sm:block"></div>
+      <div class="pointer-events-none absolute left-44 top-16 h-10 w-24 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] hidden sm:block"></div>
+      <div class="pointer-events-none absolute right-16 top-12 h-12 w-12 rounded-full bg-berry-200/70 blur-[1px] hidden sm:block"></div>
+      <div class="pointer-events-none absolute right-32 top-20 h-3 w-3 rounded-full bg-berry-400 hidden sm:block"></div>
+      <div class="pointer-events-none absolute left-8 bottom-20 h-4 w-4 rounded-full bg-sun-400 hidden sm:block"></div>
+      <div class="pointer-events-none absolute left-20 bottom-28 h-6 w-6 rotate-12 rounded-[6px] border-2 border-berry-300 bg-white/80 hidden sm:block"></div>
+      <div class="pointer-events-none absolute left-24 top-44 h-5 w-5 rotate-12 rounded-full bg-leaf-300 hidden sm:block"></div>
+      <div class="pointer-events-none absolute right-24 bottom-24 h-16 w-28 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] hidden sm:block"></div>
+      <div class="pointer-events-none absolute right-40 bottom-20 h-10 w-20 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] hidden sm:block"></div>
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.9),_rgba(254,247,238,0.4)_45%,_rgba(217,239,255,0.35)_75%)] opacity-60 sm:opacity-100"></div>
+      <div class="container-primary relative z-10 py-12 sm:py-16 lg:py-20">
+        <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div class="space-y-6">
+            <span class="section-kicker">Частная няня в Варне</span>
+            <h1 class="section-title text-4xl sm:text-5xl lg:text-6xl">
+              {{ with .Params.h1 }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+            </h1>
+            {{ with .Params.lead }}
+              <p class="section-subtitle max-w-xl text-ink-800 sm:text-ink-700">{{ . }}</p>
+            {{ end }}
+            <div class="flex flex-wrap gap-3">
+              <a class="btn btn-primary" href="{{ relref . "contact" }}">Написать / Позвонить</a>
+              <a class="btn btn-secondary" href="{{ relref . "services" }}">Посмотреть услуги</a>
+            </div>
+            <div class="mt-1 grid grid-cols-2 gap-2 text-xs text-ink-700 sm:mt-0 sm:flex sm:flex-wrap sm:gap-4 sm:text-sm">
+              <span class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-100 bg-white/80 px-2 py-1 text-ink-700 sm:border-2 sm:border-sun-200 sm:bg-sun-100 sm:px-3 sm:py-1 sm:text-ink-800 sm:shadow-[0_6px_0_0_rgba(244,182,41,0.2)]">
+                <span class="h-2 w-2 rounded-full bg-sun-500"></span>
+                Без гаджетов
+              </span>
+              <span class="inline-flex items-center justify-center gap-2 rounded-full border border-ink-100 bg-white/80 px-2 py-1 text-ink-700 sm:border-2 sm:border-leaf-200 sm:bg-leaf-100 sm:px-3 sm:py-1 sm:text-ink-800 sm:shadow-[0_6px_0_0_rgba(62,170,95,0.2)]">
+                <span class="h-2 w-2 rounded-full bg-leaf-500"></span>
+                Бережный подход
+              </span>
+              <span class="col-span-2 inline-flex items-center justify-center gap-2 rounded-full border border-ink-100 bg-white/80 px-2 py-1 text-ink-700 sm:col-span-1 sm:border-2 sm:border-berry-200 sm:bg-berry-100 sm:px-3 sm:py-1 sm:text-ink-800 sm:shadow-[0_6px_0_0_rgba(226,63,110,0.2)]">
+                <span class="h-2 w-2 rounded-full bg-berry-500"></span>
+                Обратная связь
+              </span>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute -inset-8 -z-10 rounded-[3.5rem] bg-gradient-to-br from-sun-200/70 via-sand-50 to-sea-200/60 blur-2xl"></div>
+            <div class="absolute -right-6 top-10 h-24 w-24 rounded-full border-2 border-white bg-white/80 shadow-[0_12px_0_0_rgba(37,39,55,0.08)] backdrop-blur"></div>
+            <div class="absolute -left-10 bottom-12 h-32 w-32 rounded-[2rem] border-2 border-white bg-gradient-to-br from-white/80 to-sand-50 shadow-[0_12px_0_0_rgba(37,39,55,0.08)]"></div>
+            <svg class="pointer-events-none absolute -right-10 -top-6 h-14 w-14 text-sun-300" viewBox="0 0 64 64" fill="currentColor">
+              <path d="M32 6l6.6 13.4L53 21l-10.5 10.2L45 46l-13-6.8L19 46l2.5-14.8L11 21l14.4-1.6L32 6z"/>
+            </svg>
+            <svg class="pointer-events-none absolute -left-12 top-4 h-10 w-10 text-berry-300" viewBox="0 0 64 64" fill="currentColor">
+              <path d="M32 10l5.2 10.6L49 22l-8.5 8.2L42 42l-10-5.2L22 42l1.5-11.8L15 22l11.8-1.4L32 10z"/>
+            </svg>
+            <svg class="pointer-events-none absolute -right-6 bottom-6 h-10 w-10 text-berry-200" viewBox="0 0 64 64" fill="currentColor">
+              <path d="M32 12l4.6 9.4L47 22l-7.6 7.4L41 41l-9-4.6L23 41l1.6-11.6L17 22l10.4-0.6L32 12z"/>
+            </svg>
+            <div class="relative rounded-[2.75rem] border-4 border-white bg-white/80 p-4 shadow-[0_16px_0_0_rgba(37,39,55,0.1)] backdrop-blur">
+              <picture>
+                <source srcset="/images/tanya-with-child-animated.webp" type="image/webp">
+                <img
+                  src="/images/tanya-with-child-animated.png"
+                  alt="Таня с ребёнком на прогулке в Варне"
+                  width="1024"
+                  height="1536"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="h-auto w-full rounded-[2.25rem] object-cover"
+                >
+              </picture>
+              <div class="pointer-events-none absolute -left-6 bottom-6 rounded-2xl border-2 border-white bg-white/90 px-4 py-3 text-xs font-extrabold uppercase tracking-[0.2em] text-berry-600 shadow-[0_12px_0_0_rgba(37,39,55,0.08)]">
+                Без гаджетов · Живое общение
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
-    <div class="page-body">
-      {{ .Content }}
-    </div>
+    </section>
+
+    <section class="relative py-12 sm:py-16 lg:py-20 bg-sun-50/60">
+      <div class="pointer-events-none absolute left-6 top-10 hidden h-8 w-8 rotate-12 rounded-full border-2 border-berry-200 bg-white/80 sm:block"></div>
+      <div class="pointer-events-none absolute right-10 top-6 hidden h-12 w-20 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+      <div class="pointer-events-none absolute right-24 top-12 hidden h-9 w-16 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+      <div class="container-primary relative z-10">
+        <div class="flex flex-col gap-3">
+          <span class="section-kicker">Почему со мной спокойно</span>
+          <h2 class="section-title">Забота, в которой можно быть уверенными</h2>
+          <p class="section-subtitle max-w-2xl">Я выстраиваю отношения с ребёнком мягко и уважительно, а родителям даю ощущение спокойствия и прозрачности.</p>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sea-100 text-sea-700">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l7 3v6c0 5-3.5 9-7 9s-7-4-7-9V6l7-3z" />
+                  <path d="M12 9.5c1.4-1.2 4 .4 2.5 2.3-.5.7-1.2 1.2-2.5 2.4-1.3-1.2-2-1.7-2.5-2.4C8 9.9 10.6 8.3 12 9.5z" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Безопасность и внимательность</h3>
+                <p class="mt-2 text-sm text-ink-700">Всегда рядом, без отвлечений на телефон и с понятными правилами.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-berry-100 text-berry-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="8" />
+                  <path d="M9 10h.01M15 10h.01" />
+                  <path d="M8.5 14c1.5 1.5 5.5 1.5 7 0" />
+                  <path d="M5 8c.4-1.5 1.6-2.7 3.1-3.2" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Бережный подход</h3>
+                <p class="mt-2 text-sm text-ink-700">Мягкий тон, уважение к границам и внимание к эмоциям ребёнка.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sun-100 text-sun-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="4" width="12" height="16" rx="2" />
+                  <path d="M7 8h8" />
+                  <path d="M9 12l6-6" />
+                  <path d="M6 3l12 18" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Без гаджетов</h3>
+                <p class="mt-2 text-sm text-ink-700">Только живое общение, игры, фантазия и прогулки.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-leaf-100 text-leaf-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 6h10a4 4 0 0 1 4 4v3a4 4 0 0 1-4 4H9l-4 3v-3H6a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3z" />
+                  <circle cx="10" cy="12" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Регулярная обратная связь</h3>
+                <p class="mt-2 text-sm text-ink-700">Короткие сообщения о дне ребёнка и важные наблюдения.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-sea-100 text-sea-700">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 20l4-10 8 4-4 10-6-4z" />
+                  <path d="M10 10l2-5 3 3" />
+                  <path d="M6 20l-2 2" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Игры и квесты</h3>
+                <p class="mt-2 text-sm text-ink-700">Придумываю активности, которые развивают воображение и интерес к миру.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="flex items-start gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-berry-100 text-berry-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 20v-7a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7" />
+                  <path d="M6 20v-6h4v6" />
+                  <path d="M12 14h2" />
+                  <path d="M9 7l3-3 3 3" />
+                  <path d="M8 7h8v3H8z" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold">Уважение к правилам семьи</h3>
+                <p class="mt-2 text-sm text-ink-700">Следую вашему режиму, привычкам и принципам воспитания.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-12 sm:py-16 lg:py-20 bg-leaf-50/50">
+      <div class="pointer-events-none absolute left-8 top-8 hidden h-10 w-10 rotate-12 rounded-[10px] border-2 border-sun-200 bg-white/80 sm:block"></div>
+      <div class="pointer-events-none absolute right-12 top-10 hidden h-4 w-4 rounded-full bg-berry-400 sm:block"></div>
+      <div class="pointer-events-none absolute right-20 top-16 hidden h-2 w-2 rounded-full bg-berry-300 sm:block"></div>
+      <div class="pointer-events-none absolute left-10 top-20 hidden h-12 w-20 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+      <div class="pointer-events-none absolute left-28 top-28 hidden h-9 w-16 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)] sm:block"></div>
+      <div class="container-primary relative z-10">
+        <div class="flex flex-col gap-3">
+          <span class="section-kicker">Мини-кейсы</span>
+          <h2 class="section-title">Сценарии, с которыми ко мне обращаются</h2>
+          <p class="section-subtitle max-w-2xl">Без личных данных — только формат, ритм и ощущение спокойствия, чтобы вы почувствовали стиль работы.</p>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="card relative overflow-hidden border-2 border-sun-200 bg-gradient-to-br from-white via-sun-50 to-sun-100/70">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border-2 border-sun-200 bg-sun-100 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.2em] text-ink-900">Кейс 01</span>
+              <div class="flex items-center gap-2 text-xs font-semibold text-ink-700">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-[0_6px_0_0_rgba(37,39,55,0.08)]">🌙</span>
+                Вечер
+              </div>
+            </div>
+            <div class="mt-4 flex items-center gap-3">
+              <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sun-100 text-sun-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 14c2-4 4-6 8-7-1 3-2 7-4 9-2 2-4 2-6 1 1-1 2-2 2-3z" />
+                  <path d="M14 6c2 1 3 3 3 5" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-xl font-semibold">Спокойный вечер для родителей</h3>
+                <p class="text-sm text-ink-700">Мягкий ритм, ужин и подготовка ко сну без лишней суеты.</p>
+              </div>
+            </div>
+            <dl class="mt-5 grid gap-3 text-sm text-ink-700">
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sun-700">Запрос</dt>
+                <dd class="mt-1">Нужна няня на вечер в Варне, чтобы ребёнок спокойно поужинал и подготовился ко сну.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sun-700">Подход</dt>
+                <dd class="mt-1">Тихие игры, привычные ритуалы, спокойные переходы ко сну.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sun-700">Что важно</dt>
+                <dd class="mt-1">Родители получают спокойствие и понятный короткий отчёт о вечере.</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="card relative overflow-hidden border-2 border-berry-200 bg-gradient-to-br from-white via-berry-50 to-berry-100/70">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border-2 border-berry-200 bg-berry-100 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.2em] text-ink-900">Кейс 02</span>
+              <div class="flex items-center gap-2 text-xs font-semibold text-ink-700">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-[0_6px_0_0_rgba(37,39,55,0.08)]">🧸</span>
+                Адаптация
+              </div>
+            </div>
+            <div class="mt-4 flex items-center gap-3">
+              <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-berry-100 text-berry-600">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="6" r="2.5" />
+                  <circle cx="16" cy="6" r="2.5" />
+                  <path d="M6 20v-6a6 6 0 0 1 12 0v6" />
+                  <path d="M9 14h.01M15 14h.01" />
+                  <path d="M10 17c1.5 1 2.5 1 4 0" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-xl font-semibold">Адаптация к детскому саду</h3>
+                <p class="text-sm text-ink-700">Плавный вход в новый режим, мягкое знакомство и поддержка.</p>
+              </div>
+            </div>
+            <dl class="mt-5 grid gap-3 text-sm text-ink-700">
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Запрос</dt>
+                <dd class="mt-1">Ребёнку нужна мягкая адаптация к новому режиму и взрослым.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Подход</dt>
+                <dd class="mt-1">Постепенные встречи, спокойные ритуалы, уважение к темпу ребёнка.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Что важно</dt>
+                <dd class="mt-1">Поддержка доверия и ощущение безопасности в период изменений.</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="card relative overflow-hidden border-2 border-sea-200 bg-gradient-to-br from-white via-sea-50 to-sea-100/70">
+            <div class="flex items-center justify-between gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border-2 border-sea-200 bg-sea-100 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.2em] text-ink-900">Кейс 03</span>
+              <div class="flex items-center gap-2 text-xs font-semibold text-ink-700">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-[0_6px_0_0_rgba(37,39,55,0.08)]">🚌</span>
+                Кружки
+              </div>
+            </div>
+            <div class="mt-4 flex items-center gap-3">
+              <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sea-100 text-sea-700">
+                <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="6" width="16" height="9" rx="2" />
+                  <path d="M4 12h16" />
+                  <circle cx="8" cy="17" r="2" />
+                  <circle cx="16" cy="17" r="2" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-xl font-semibold">Сопровождение на кружки</h3>
+                <p class="text-sm text-ink-700">Пунктуально, безопасно и без лишней спешки по дороге.</p>
+              </div>
+            </div>
+            <dl class="mt-5 grid gap-3 text-sm text-ink-700">
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sea-700">Запрос</dt>
+                <dd class="mt-1">Нужно отвезти ребёнка на занятия и дождаться окончания.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sea-700">Подход</dt>
+                <dd class="mt-1">Пунктуальность, спокойное общение, безопасность в пути.</dd>
+              </div>
+              <div class="rounded-2xl border-2 border-white bg-white/80 p-3 shadow-[0_6px_0_0_rgba(37,39,55,0.06)]">
+                <dt class="text-xs font-extrabold uppercase tracking-[0.2em] text-sea-700">Что важно</dt>
+                <dd class="mt-1">Соблюдение расписания и правила семьи.</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-12 sm:py-16 lg:py-20">
+      <div class="pointer-events-none absolute left-10 top-8 h-10 w-10 rounded-full bg-sea-100"></div>
+      <div class="pointer-events-none absolute left-20 top-16 h-3 w-3 rounded-full bg-sea-400"></div>
+      <div class="pointer-events-none absolute right-10 top-12 h-6 w-6 rotate-6 rounded-[8px] border-2 border-berry-200 bg-white/80"></div>
+      <div class="container-primary">
+        <div class="flex flex-col gap-3">
+          <span class="section-kicker">Процесс</span>
+          <h2 class="section-title">Как начинается работа со мной</h2>
+          <p class="section-subtitle max-w-2xl">Прозрачный и спокойный процесс, чтобы ребёнку и родителям было комфортно.</p>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-4">
+          <div class="card">
+            <div class="text-3xl font-display text-sea-700">01</div>
+            <h3 class="mt-3 text-lg font-semibold">Знакомство</h3>
+            <p class="mt-2 text-sm text-ink-700">Короткий созвон или переписка, чтобы понять запрос.</p>
+          </div>
+          <div class="card">
+            <div class="text-3xl font-display text-sea-700">02</div>
+            <h3 class="mt-3 text-lg font-semibold">Первая встреча</h3>
+            <p class="mt-2 text-sm text-ink-700">Мягкое знакомство в удобном для ребёнка темпе.</p>
+          </div>
+          <div class="card">
+            <div class="text-3xl font-display text-sea-700">03</div>
+            <h3 class="mt-3 text-lg font-semibold">Договорённости</h3>
+            <p class="mt-2 text-sm text-ink-700">Режим, правила семьи, формат, длительность.</p>
+          </div>
+          <div class="card">
+            <div class="text-3xl font-display text-sea-700">04</div>
+            <h3 class="mt-3 text-lg font-semibold">Поддержка</h3>
+            <p class="mt-2 text-sm text-ink-700">Работаю спокойно и даю обратную связь.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-12 sm:py-16 lg:py-20">
+      <div class="pointer-events-none absolute right-12 top-10 h-8 w-8 rounded-full bg-sun-200"></div>
+      <div class="pointer-events-none absolute right-20 top-16 h-3 w-3 rounded-full bg-sun-400"></div>
+      <div class="pointer-events-none absolute left-10 top-6 h-12 w-20 rounded-full border-2 border-white bg-white/80 shadow-[0_8px_0_0_rgba(37,39,55,0.06)]"></div>
+      <div class="container-primary">
+        <div class="rounded-[3rem] border-2 border-ink-100 bg-gradient-to-br from-sea-500 via-berry-500 to-sun-400 px-6 py-12 text-white shadow-[0_14px_0_0_rgba(37,39,55,0.15)] sm:px-10">
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="space-y-4">
+              <span class="section-kicker bg-white/20 text-white">Манифест</span>
+              <h2 class="text-3xl font-display font-semibold sm:text-4xl lg:text-5xl">Спокойствие семьи начинается с тёплого взрослого рядом с ребёнком.</h2>
+            </div>
+            <div class="space-y-4 text-sm text-white/90">
+              <p>Я не заменяю родителей — я поддерживаю ритм семьи, её правила и ценности.</p>
+              <p>Без экранов, без спешки, с уважением к тому, как ребёнок чувствует этот мир.</p>
+              <a class="inline-flex items-center gap-2 text-sm font-semibold text-white" href="{{ relref . "contact" }}">Обсудить формат →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16 lg:py-20">
+      <div class="container-primary">
+        <div class="flex flex-col gap-3">
+          <span class="section-kicker">Услуги</span>
+          <h2 class="section-title">Форматы заботы и дополнительные сценарии</h2>
+          <p class="section-subtitle max-w-2xl">Базовые форматы + расширенные варианты — чтобы подобрать помощь под ритм вашей семьи.</p>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/pochasovo" }}">
+            <div>
+              <h3 class="text-xl font-semibold">Почасовая няня</h3>
+              <p class="mt-3 text-sm text-ink-700">Когда нужно спокойное время для дел, встреч или отдыха.</p>
+              <p class="mt-4 text-sm font-semibold text-ink-900">Подходит, если:</p>
+              <ul class="mt-2 space-y-2 text-sm text-ink-700">
+                <li>нужно 2–4 часа свободного времени</li>
+                <li>ребёнку важна привычная среда</li>
+                <li>хотите попробовать формат перед регулярными встречами</li>
+              </ul>
+            </div>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/na-vecher" }}">
+            <div>
+              <h3 class="text-xl font-semibold">Няня на вечер</h3>
+              <p class="mt-3 text-sm text-ink-700">Тёплый вечер для ребёнка и спокойный вечер для родителей.</p>
+              <p class="mt-4 text-sm font-semibold text-ink-900">Подходит, если:</p>
+              <ul class="mt-2 space-y-2 text-sm text-ink-700">
+                <li>нужна помощь в период ужина и сна</li>
+                <li>хочется побыть вдвоём или сходить в гости</li>
+                <li>важна мягкая подготовка ко сну</li>
+              </ul>
+            </div>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/polnyy-den" }}">
+            <div>
+              <h3 class="text-xl font-semibold">Полный день</h3>
+              <p class="mt-3 text-sm text-ink-700">Надёжная поддержка на весь день, если график плотный.</p>
+              <p class="mt-4 text-sm font-semibold text-ink-900">Подходит, если:</p>
+              <ul class="mt-2 space-y-2 text-sm text-ink-700">
+                <li>нужна регулярная помощь несколько раз в неделю</li>
+                <li>важна структура дня и режим</li>
+                <li>хотите спокойствия и уверенности</li>
+              </ul>
+            </div>
+            <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/vyhodnye" }}">
+            <div>
+              <h3 class="text-lg font-semibold">Няня на выходные</h3>
+              <p class="mt-2 text-sm text-ink-700">Гибкая поддержка по субботам и воскресеньям.</p>
+            </div>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/soprovozhdenie" }}">
+            <div>
+              <h3 class="text-lg font-semibold">Сопровождение на кружки</h3>
+              <p class="mt-2 text-sm text-ink-700">Довезти, подождать, вернуть домой безопасно.</p>
+            </div>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/adaptaciya" }}">
+            <div>
+              <h3 class="text-lg font-semibold">Адаптация к садику</h3>
+              <p class="mt-2 text-sm text-ink-700">Мягкий переход к новому режиму и взрослым.</p>
+            </div>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+          <a class="card group flex h-full flex-col justify-between transition hover:-translate-y-1 hover:shadow-md" href="{{ relref . "varna/v-otele" }}">
+            <div>
+              <h3 class="text-lg font-semibold">Няня в отеле</h3>
+              <p class="mt-2 text-sm text-ink-700">Помощь семьям в Варне во время отпуска.</p>
+            </div>
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sea-700">Подробнее →</span>
+          </a>
+        </div>
+        <div class="mt-6 text-sm text-ink-700">
+          Ещё больше деталей — на странице <a class="font-semibold text-sea-700" href="{{ relref . "services" }}">«Услуги»</a>.
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16 lg:py-20">
+      <div class="container-primary">
+        <div class="grid items-start gap-10 lg:grid-cols-[0.55fr_0.45fr]">
+          <div class="space-y-4">
+            <span class="section-kicker">Обо мне</span>
+            <h2 class="section-title">Тёплый взрослый рядом с ребёнком</h2>
+            <a class="inline-flex items-center gap-2 text-sm font-semibold text-sea-700" href="{{ relref . "about" }}">Читать подробнее →</a>
+          </div>
+          <figure class="card">
+            <blockquote class="text-lg leading-relaxed text-ink-800">
+              {{ with .Params.about_excerpt }}{{ . }}{{ else }}{{ .Params.lead }}{{ end }}
+            </blockquote>
+            <figcaption class="mt-4 text-sm font-semibold text-ink-900">Таня, частная няня</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 sm:py-16 lg:py-20">
+      <div class="container-primary">
+        <div class="rounded-[2.5rem] border border-sand-100 bg-gradient-to-br from-white via-sand-50 to-sea-50 px-6 py-10 sm:px-10 sm:py-12">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div class="space-y-4">
+              <span class="section-kicker">Контакты</span>
+              <h2 class="section-title">Напишите, и я отвечу в течение дня</h2>
+              <p class="section-subtitle max-w-xl">Расскажите о возрасте ребёнка, ваших ожиданиях и нужном формате. Мы договоримся о первой встрече.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a class="btn btn-primary" href="{{ .Site.Params.telegram | default "#" }}">Telegram</a>
+                <a class="btn btn-secondary" href="{{ .Site.Params.instagram | default "#" }}">Instagram</a>
+              </div>
+            </div>
+            <div class="card space-y-4">
+              <div class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Каналы связи</div>
+              <p class="text-sm text-ink-700">Выберите удобный способ — отвечаю в течение дня.</p>
+              <div class="space-y-2">
+                <a class="group flex items-center justify-between rounded-2xl border border-ink-100 bg-white/70 px-4 py-3 text-sm font-semibold text-ink-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sea-200 hover:bg-white" href="{{ .Site.Params.telegram | default "#" }}">
+                  <span>Telegram</span>
+                  <span class="text-sea-700 transition group-hover:text-sea-800">Написать →</span>
+                </a>
+                <a class="group flex items-center justify-between rounded-2xl border border-ink-100 bg-white/70 px-4 py-3 text-sm font-semibold text-ink-900 shadow-sm transition hover:-translate-y-0.5 hover:border-sea-200 hover:bg-white" href="{{ .Site.Params.instagram | default "#" }}">
+                  <span>Instagram</span>
+                  <span class="text-sea-700 transition group-hover:text-sea-800">Написать →</span>
+                </a>
+              </div>
+              <div class="rounded-2xl border border-ink-100 bg-white/70 px-4 py-3 text-sm text-ink-700">
+                Город: {{ .Site.Params.city }}, {{ .Site.Params.country }}
+              </div>
+              <a class="inline-flex items-center gap-2 text-sm font-semibold text-sea-700" href="{{ relref . "contact" }}">Открыть страницу контактов →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {{ partial "faq.html" . }}
+
+    <section class="py-12 sm:py-16 lg:py-20">
+      <div class="container-primary">
+        <div class="flex flex-col gap-3">
+          <span class="section-kicker">Подробно</span>
+          <h2 class="section-title">История, подход и формат работы</h2>
+          <p class="section-subtitle max-w-2xl">Немного больше текста для тех, кто любит узнавать детали.</p>
+        </div>
+        <div class="richtext mt-8 max-w-4xl">
+          {{ .Content }}
+        </div>
+      </div>
+    </section>
   </article>
 {{ end }}

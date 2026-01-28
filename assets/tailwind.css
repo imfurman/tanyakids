@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand-50 text-ink-900 antialiased;
+  }
+}
+
+@layer components {
+  .container-primary {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center rounded-full bg-berry-50 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700;
+  }
+
+  .section-title {
+    @apply text-3xl font-display font-semibold leading-[1.05] text-ink-900 sm:text-4xl lg:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-base font-medium text-ink-700 sm:text-lg;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 px-5 py-3 text-sm font-extrabold transition duration-200;
+  }
+
+  .btn-primary {
+    @apply border-berry-600 bg-berry-500 text-white shadow-[0_10px_0_0_rgba(226,63,110,0.2)] hover:-translate-y-0.5 hover:bg-berry-600;
+  }
+
+  .btn-secondary {
+    @apply border-sun-300 bg-sun-200 text-ink-900 shadow-[0_10px_0_0_rgba(245,182,41,0.25)] hover:-translate-y-0.5 hover:bg-sun-300;
+  }
+
+  .btn-outline {
+    @apply border-sea-200 bg-white text-sea-700 shadow-[0_10px_0_0_rgba(78,167,245,0.15)] hover:-translate-y-0.5 hover:border-sea-300 hover:text-sea-800;
+  }
+
+  .card {
+    @apply rounded-[2.25rem] border-2 border-ink-100 bg-white/95 p-6 shadow-[0_12px_0_0_rgba(37,39,55,0.06)];
+  }
+
+  .richtext {
+    @apply text-ink-800;
+  }
+
+  .richtext p {
+    @apply mt-4 leading-relaxed;
+  }
+
+  .richtext h2 {
+    @apply mt-10 text-2xl font-semibold text-ink-900;
+  }
+
+  .richtext h3 {
+    @apply mt-8 text-xl font-semibold text-ink-900;
+  }
+
+  .richtext ul {
+    @apply mt-4 list-disc space-y-2 pl-5;
+  }
+
+  .richtext ol {
+    @apply mt-4 list-decimal space-y-2 pl-5;
+  }
+
+  .richtext a {
+    @apply text-berry-600 underline decoration-berry-200 underline-offset-4 hover:text-berry-700;
+  }
+
+  .faq-item[open] .faq-icon {
+    @apply rotate-45 text-berry-600;
+  }
+}

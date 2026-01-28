@@ -1,11 +1,18 @@
 {{ define "main" }}
-  <article class="page">
-    <header class="page-header">
-      <h1>{{ with .Params.h1 }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h1>
-      {{ with .Params.lead }}<p class="lead">{{ . }}</p>{{ end }}
+  <article class="bg-sand-50">
+    <header class="border-b-2 border-ink-100 bg-sea-50/70">
+      <div class="container-primary py-12 sm:py-14">
+        <span class="section-kicker">{{ .Site.Params.siteName }}</span>
+        <h1 class="mt-4 text-3xl font-display font-semibold text-ink-900 sm:text-4xl lg:text-5xl">
+          {{ with .Params.h1 }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+        </h1>
+        {{ with .Params.lead }}<p class="section-subtitle max-w-2xl">{{ . }}</p>{{ end }}
+      </div>
     </header>
-    <div class="page-body">
-      {{ .Content }}
+    <div class="container-primary py-12">
+      <div class="richtext max-w-4xl">
+        {{ .Content }}
+      </div>
     </div>
     {{ partial "faq.html" . }}
   </article>

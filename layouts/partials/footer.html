@@ -1,27 +1,37 @@
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="logo">{{ .Site.Params.siteName }}</div>
-      <p>Частная няня в Варне. Бережно, спокойно, без экранов.</p>
+<footer class="border-t-2 border-ink-100 bg-sand-50">
+  <div class="container-primary py-12">
+    <div class="grid gap-10 lg:grid-cols-3">
+      <div class="space-y-4">
+        <div class="font-display text-xl font-semibold text-ink-900">{{ .Site.Params.siteName }}</div>
+        <p class="text-sm text-ink-700">Частная няня в Варне. Бережно, спокойно, без экранов и суеты.</p>
+        <div class="text-sm text-ink-700">
+          <div>{{ .Site.Params.city }}, {{ .Site.Params.country }}</div>
+          <div><a class="transition hover:text-ink-900" href="{{ .Site.Params.telegram | default "#" }}">Telegram</a></div>
+          <div><a class="transition hover:text-ink-900" href="{{ .Site.Params.instagram | default "#" }}">Instagram</a></div>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <div class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Навигация</div>
+        <ul class="space-y-2 text-sm text-ink-700">
+          <li><a class="transition hover:text-ink-900" href="{{ "/" | relURL }}">Главная</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "about" }}">Обо мне</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "services" }}">Услуги</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "prices" }}">Цены</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "varna" }}">Варна</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "contact" }}">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="space-y-3">
+        <div class="text-xs font-extrabold uppercase tracking-[0.2em] text-berry-700">Быстрые ссылки</div>
+        <ul class="space-y-2 text-sm text-ink-700">
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "varna/pochasovo" }}">Почасовая няня</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "varna/na-vecher" }}">Няня на вечер</a></li>
+          <li><a class="transition hover:text-ink-900" href="{{ relref . "varna/polnyy-den" }}">Полный день</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <div class="footer-title">Контакты</div>
-      <ul class="footer-list">
-        <li>Телефон: {{ .Site.Params.phone }}</li>
-        <li>Email: {{ .Site.Params.email }}</li>
-        <li>Город: {{ .Site.Params.city }}, {{ .Site.Params.country }}</li>
-      </ul>
+    <div class="mt-10 flex flex-col items-start gap-2 border-t-2 border-ink-100 pt-6 text-xs text-ink-600 sm:flex-row sm:items-center sm:justify-between">
+      <span>© {{ now.Year }} Таня, частная няня</span>
     </div>
-    <div>
-      <div class="footer-title">Навигация</div>
-      <ul class="footer-list">
-        <li><a href="{{ relref . "services" }}">Услуги</a></li>
-        <li><a href="{{ relref . "prices" }}">Цены</a></li>
-        <li><a href="{{ relref . "contact" }}">Связаться</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© {{ now.Year }} Таня, частная няня</span>
   </div>
 </footer>

@@ -4,6 +4,10 @@
   (dict "@type" "Offer" "name" "Почасовая няня" "url" ("/varna/pochasovo/" | absURL))
   (dict "@type" "Offer" "name" "Няня на вечер" "url" ("/varna/na-vecher/" | absURL))
   (dict "@type" "Offer" "name" "Няня на полный день" "url" ("/varna/polnyy-den/" | absURL))
+  (dict "@type" "Offer" "name" "Няня на выходные" "url" ("/varna/vyhodnye/" | absURL))
+  (dict "@type" "Offer" "name" "Сопровождение на кружки" "url" ("/varna/soprovozhdenie/" | absURL))
+  (dict "@type" "Offer" "name" "Адаптация к детскому саду" "url" ("/varna/adaptaciya/" | absURL))
+  (dict "@type" "Offer" "name" "Няня в отеле" "url" ("/varna/v-otele/" | absURL))
 }}
 {{ $person := dict "@context" "https://schema.org" "@type" "Person" "name" "Таня" "jobTitle" "Частная няня" "knowsLanguage" (slice "ru") "address" $address }}
 {{ $business := dict "@context" "https://schema.org" "@type" "LocalBusiness" "name" .Site.Params.siteName "address" $address "areaServed" (dict "@type" "City" "name" "Varna") "knowsLanguage" (slice "ru") "url" .Site.BaseURL "offers" $offers }}

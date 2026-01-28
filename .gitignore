@@ -1,3 +1,15 @@
 public/
 .hugo_build.lock
 .DS_Store
+node_modules
+resources/
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+Thumbs.db
+.vscode/
+.idea/
