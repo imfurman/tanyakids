@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := .Params.seo_title | default (printf "%s — %s" .Title .Site.Title) }}
+<title>{{ $title }}</title>
+{{ $description := .Params.seo_description | default .Site.Params.description }}
+<meta name="description" content="{{ $description }}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{ .Params.canonical | default .Permalink }}">
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Params.siteName }}">
+<meta property="og:locale" content="{{ .Site.Params.locale }}">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+{{ $ogImage := .Params.og_image | default .Site.Params.socialImage }}
+<meta property="og:image" content="{{ $ogImage | absURL }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $ogImage | absURL }}">
+
+<link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" sizes="any">

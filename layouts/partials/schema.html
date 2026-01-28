@@ -1,0 +1,36 @@
+{{ $schemas := slice }}
+{{ $address := dict "@type" "PostalAddress" "addressLocality" "Varna" "addressCountry" "BG" }}
+{{ $offers := slice
+  (dict "@type" "Offer" "name" "Почасовая няня" "url" ("/varna/pochasovo/" | absURL))
+  (dict "@type" "Offer" "name" "Няня на вечер" "url" ("/varna/na-vecher/" | absURL))
+  (dict "@type" "Offer" "name" "Няня на полный день" "url" ("/varna/polnyy-den/" | absURL))
+}}
+{{ $person := dict "@context" "https://schema.org" "@type" "Person" "name" "Таня" "jobTitle" "Частная няня" "knowsLanguage" (slice "ru") "address" $address }}
+{{ $business := dict "@context" "https://schema.org" "@type" "LocalBusiness" "name" .Site.Params.siteName "address" $address "areaServed" (dict "@type" "City" "name" "Varna") "knowsLanguage" (slice "ru") "url" .Site.BaseURL "offers" $offers }}
+
+{{ if in .Params.schema "Person" }}
+  {{ $schemas = $schemas | append $person }}
+{{ end }}
+{{ if in .Params.schema "LocalBusiness" }}
+  {{ $schemas = $schemas | append $business }}
+{{ end }}
+{{ if in .Params.schema "Service" }}
+  {{ $serviceName := .Params.service_name | default .Title }}
+  {{ $serviceDesc := .Params.service_description | default .Params.seo_description }}
+  {{ $service := dict "@context" "https://schema.org" "@type" "Service" "name" $serviceName "description" $serviceDesc "areaServed" (dict "@type" "City" "name" "Varna") "provider" $person "url" .Permalink }}
+  {{ $schemas = $schemas | append $service }}
+{{ end }}
+{{ with .Params.faq }}
+  {{ $faqItems := slice }}
+  {{ range . }}
+    {{ $faqItems = $faqItems | append (dict "@type" "Question" "name" .question "acceptedAnswer" (dict "@type" "Answer" "text" .answer)) }}
+  {{ end }}
+  {{ $faq := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $faqItems }}
+  {{ $schemas = $schemas | append $faq }}
+{{ end }}
+
+{{ if gt (len $schemas) 0 }}
+<script type="application/ld+json">
+{{ $schemas | jsonify }}
+</script>
+{{ end }}

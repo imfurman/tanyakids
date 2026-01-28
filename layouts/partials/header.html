@@ -1,0 +1,12 @@
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="{{ "/" | relURL }}">{{ .Site.Params.siteName }}</a>
+    <nav class="nav">
+      <a href="{{ relref . "about" }}">О Тане</a>
+      <a href="{{ relref . "services" }}">Услуги</a>
+      <a href="{{ relref . "prices" }}">Цены</a>
+      <a href="{{ relref . "varna" }}">Варна</a>
+      <a class="nav-cta" href="{{ relref . "contact" }}">Контакты</a>
+    </nav>
+  </div>
+</header>

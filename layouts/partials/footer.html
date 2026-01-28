@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo">{{ .Site.Params.siteName }}</div>
+      <p>Частная няня в Варне. Бережно, спокойно, без экранов.</p>
+    </div>
+    <div>
+      <div class="footer-title">Контакты</div>
+      <ul class="footer-list">
+        <li>Телефон: {{ .Site.Params.phone }}</li>
+        <li>Email: {{ .Site.Params.email }}</li>
+        <li>Город: {{ .Site.Params.city }}, {{ .Site.Params.country }}</li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-title">Навигация</div>
+      <ul class="footer-list">
+        <li><a href="{{ relref . "services" }}">Услуги</a></li>
+        <li><a href="{{ relref . "prices" }}">Цены</a></li>
+        <li><a href="{{ relref . "contact" }}">Связаться</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {{ now.Year }} Таня, частная няня</span>
+  </div>
+</footer>

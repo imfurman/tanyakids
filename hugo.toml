@@ -1,0 +1,31 @@
+baseURL = "https://tanyakids.com/"
+languageCode = "ru-RU"
+title = "TanyaKids"
+DefaultContentLanguage = "ru"
+enableRobotsTXT = true
+canonifyURLs = false
+
+disableKinds = ["taxonomy", "term"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  siteName = "TanyaKids"
+  description = "Частная няня Таня: бережная забота о детях в Варне. Почасово, на вечер и полный день."
+  locale = "ru_RU"
+  author = "Таня"
+  city = "Варна"
+  country = "Болгария"
+  phone = "+359 00 000 000" # заменить на реальный
+  email = "tanya@example.com" # заменить на реальный
+  address = "Варна, Болгария"
+  socialImage = "/images/og-cover.svg"
+  twitterSite = "@"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
