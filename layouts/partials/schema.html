@@ -35,6 +35,6 @@
 
 {{ if gt (len $schemas) 0 }}
 <script type="application/ld+json">
-{{ $schemas | jsonify }}
+{{ $schemas | jsonify | safeJS }}
 </script>
 {{ end }}
